@@ -1,0 +1,35 @@
+<meta charset="utf-8">
+<head> 
+<script>
+function TurnToObj(num)
+{
+    var arrNumber = num.split('');
+    while (arrNumber.length < 3)
+    {
+    	arrNumber.unshift(0);
+    }
+    var objNumber = {};
+    if (arrNumber.length == 3)
+    {
+		objNumber['сотни'] = +arrNumber[0]; 
+    	objNumber['десятки'] = +arrNumber[1]; 
+    	objNumber['единицы'] = +arrNumber[2];
+        return objNumber;	
+    }
+    else
+    {
+		return null;
+    }
+}
+var number = prompt("Введите число от 0 до 999");
+var obj = TurnToObj(number);
+if (obj == null)
+{
+	console.log("Incorrect Object");
+}
+else
+{
+	console.log(TurnToObj(number));
+}
+</script>
+</head>
