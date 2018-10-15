@@ -1,0 +1,16 @@
+<meta charset="utf-8">
+<head> 
+<script>
+var basketPrice = 0;
+var MasOfObjBasket = [{name:'Пылесос Tefal', material:'TY8875RO', price:9327}, {name:'Мультиварка Moulinex', material: 'CE502832', price:4850}, {name:'Электрофен Rowenta', material: 'CV4750F0', price:1199}, {name:'Кофемашина Krups', material: 'EA810B70', price:18298}];
+function countBasketPrice(x) {
+    for (i=0; i<MasOfObjBasket.length; i++) { 
+        basketPrice = basketPrice + MasOfObjBasket[i].price;
+    }
+    return basketPrice;
+}
+document.write('<h1>Содержание корзины:</h1>');
+for (i=0;i<MasOfObjBasket.length;i++){document.write(MasOfObjBasket[i].material + '  ' + MasOfObjBasket[i].name + ' - ' + MasOfObjBasket[i].price +' руб </br>');}
+document.write('<h2>Итого: '+countBasketPrice(MasOfObjBasket)+' руб </h2>');
+</script>
+</head>
