@@ -1,0 +1,179 @@
+<meta charset="utf-8">
+<head> 
+<script defer>
+	var works = {
+    a00:'Что помогает туристу ориентироваться в незнакомом городе?\n',
+    a0: 4,
+    a1: '1 - Путепровод\n',
+    a2: '2 - Путеукладчик\n',
+	a3: '3 - Путеводитель\n',
+	a4: '4 - Путеводная звезда\n',
+    b00: 'Что не бывает морским?\n',
+    b0: 4,
+    b1: '1 - Рельс\n',
+    b2: '2 - Огурец\n',
+	b3: '3 - Гребешок\n',
+	b4: '4 - Узел\n',
+    c00: 'Как звали старшую сестру императора Петра Первого?\n',
+    c0: 4,
+    c1: '1 - Вера\n',
+    c2: '2 - Людмила\n',
+	c3: '3 - Елизавета\n',
+	c4: '4 - Софья\n',
+	d00: 'Где в Древней Греции можно было увидеть надпись: "Здесь живут мертвые и говорят немые"?\n',
+    d0: 4,
+    d1: '1 - На кладбищах\n',
+    d2: '2 - В больницах\n',
+	d3: '3 - В библиотеках\n',
+	d4: '4 - В картинных галереях\n',
+	e00: 'Чем профессионально занимается провизор?\n',
+    e0: 4, // количество ответов
+    e1: '1 - Наблюдает за погодой\n',
+    e2: '2 - Готовит лекарства\n',
+	e3: '3 - Ухаживает за растениями\n',
+	e4: '4 - Импровизирует\n',
+	};
+	</script>
+    <script defer>
+	var event, ok;
+
+do {//Выводим первый вопрос
+    ok = false;
+    event = +prompt(works.a00 + works.a1 + works.a2 + works.a3 + works.a4 + '-1 - Выход из игры');
+    if (event == -1) {
+        break;
+    }
+    else {
+        ok = isAnswer(works.a0, event);
+    }
+} while (!ok);
+switch (event) {
+    case 3: // Первое действие  - если в первом окне ввели 3, то открываем следующий вопрос
+		alert ("Правильно! Сумма выигрыша: 500 руб");
+        do {
+            ok = false;
+            event = +prompt(works.b00 + works.b1 + works.b2 + works.b3 + works.b4 + '-1 - Выход из игры');
+            if (event == -1) {
+                break;
+            }
+            else {
+                ok = isAnswer(works.b0, event);
+            }
+        } while (!ok);
+        switch (event) {
+            case 1: // Второе действие - если во втором окне ввели 1, то открываем следующий вопрос
+			alert ("Правильно! Сумма выигрыша: 1000 руб");
+                do {
+                    ok = false;
+                    event = +prompt(works.c00 + works.c1 + works.c2 + works.c3 + works.c4 + '-1 - Выход из игры');
+                    if (event == -1) {
+                        break;
+                    }
+                    else {
+                        ok = isAnswer(works.c0, event);
+                    }
+                } while (!ok);
+				switch (event) {
+					case 4: // Третье действие - если в третьем окне ввели 4, то открываем следующий вопрос
+					alert ("Правильно! Сумма выигрыша: 5000 руб");
+						do {
+							ok = false;
+							event = +prompt(works.d00 + works.d1 + works.d2 + works.d3 + works.d4 + '-1 - Выход из игры');
+							if (event == -1) {
+								break;
+							}
+							else {
+								ok = isAnswer(works.d0, event);
+							}
+						} while (!ok);
+						switch (event) {
+							case 3: // Четвертое действие - если в четвертом окне ввели 3, то открываем следующий вопрос
+							alert ("Правильно! Сумма выигрыша: 10000 руб");
+								do {
+									ok = false;
+									event = +prompt(works.e00 + works.e1 + works.e2 + works.e3 + works.e4 + '-1 - Выход из игры');
+									if (event == -1) {
+										break;
+									}
+									else {
+										ok = isAnswer(works.e0, event);
+									}
+								} while (!ok);
+								switch (event) {
+									case 3: // Пятое действие - если в пятом окне ввели 3, то игра окончена победой
+									alert ("Правильно! Поздравляем! Несгораемая сумма: 50000 руб");
+										break;
+										case 1: // Пятое действие
+										case 2:
+										case 4:
+										alert ("Неправильно! Сумма выигрыша: 0 руб");	
+										break;
+										case -1: // Пятое действие
+											break;
+										default:
+											alert('Ошибка');
+											}
+								
+							break;
+							case 1: // Четвертое действие
+							case 2:
+							case 4:
+							alert ("Неправильно! Сумма выигрыша: 0 руб");	
+							break;
+							case -1: // четвертое действие
+								break;
+							default:
+								alert('Ошибка');
+								}
+
+              
+					break;
+					case 1: // Третье действие
+					case 2:
+					case 3:
+					alert ("Неправильно! Сумма выигрыша: 0 руб");	
+					break;
+					case -1: // Третье действие
+						break;
+					default:
+						alert('Ошибка');
+						}
+
+            break;
+			case 3: // Второе действие
+			case 2:
+			case 4:
+			alert ("Неправильно! Сумма выигрыша: 0 руб");
+			break;
+            case -1: // Второе действие
+                break;
+            default:
+                alert('Ошибка');
+        }
+        break;
+	case 1: // Первое действие
+	case 2:
+	case 4:
+	alert ("Неправильно! Сумма выигрыша: 0 руб");	
+	break;
+    case -1: // Первое действие
+        break;
+    default:
+        alert('Неправильно! Сумма выигрыша: 0 руб');
+		}
+alert('Спасибо за игру');
+
+//------------------------------------------
+function isAnswer(q, event) {
+    if (isNaN(event) || !isFinite(event)) {
+        alert('Вы ввели недопустимый символ');
+        return false;
+    }
+    else if (event < 1 || event > q) {
+        alert('Ваше число выходит из допустимого диапозона');
+        return false;
+    }
+	return true;  
+}
+	</script>
+</head>
